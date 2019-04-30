@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kama.Web", "Kama.Web\Kama.Web.csproj", "{9ED0E840-4442-44FF-9767-4DA552B0C65B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaConsole", "KamaConsole\KamaConsole.csproj", "{E6664ACA-9824-4AF6-80CB-9A2158AB263B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9ED0E840-4442-44FF-9767-4DA552B0C65B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ED0E840-4442-44FF-9767-4DA552B0C65B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ED0E840-4442-44FF-9767-4DA552B0C65B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ED0E840-4442-44FF-9767-4DA552B0C65B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6664ACA-9824-4AF6-80CB-9A2158AB263B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6664ACA-9824-4AF6-80CB-9A2158AB263B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6664ACA-9824-4AF6-80CB-9A2158AB263B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6664ACA-9824-4AF6-80CB-9A2158AB263B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {695A7AA7-C3F5-4B15-90E6-BB8A8C551779}
+	EndGlobalSection
+EndGlobal
