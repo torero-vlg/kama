@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.ML;
 using Microsoft.ML.Data;
+using Microsoft.ML.Models;
 using Microsoft.ML.Trainers;
 using Microsoft.ML.Transforms;
 
@@ -20,10 +21,38 @@ namespace KamaConsole
         static async Task Main(string[] args)
         {
             PredictionModel<ItemStock, itemStockQtyPrediction> model = await TrainourModel();
+
+            Evaluate(model);
+
+            Console.ReadLine();
         }
 
         public static async Task<PredictionModel<ItemStock, itemStockQtyPrediction>> TrainourModel()
         {
+            var pipeline = new LearningPipeline
+            {
+                new TextLoader(_Traindatapath).CreateFrom<ItemStock>(useHeader:true, separator:','),
+                new ColumnCopier(("TotalStockQty", "Label")),
+                new CategoricalOneHotVectorizer("ItemID", "ItemType"),
+                new ColumnConcatenator("Features","ItemID","Loccode","InQty","OutQty","ItemType"),
+                new FastTreeRegressor()
+            };
+
+            PredictionModel<ItemStock, itemStockQtyPrediction> model = pipeline.Train<ItemStock, itemStockQtyPrediction>();
+
+            await model.WriteAsync(_modelpath);
+            return model;
+        }
+
+        private static void Evaluate(PredictionModel<ItemStock, itemStockQtyPrediction> model)
+        {
+            var testData = new TextLoader(_Evaluatedatapath).CreateFrom<ItemStock>(useHeader: true, separator: ',');
+            var evaluator = new RegressionEvaluator();
+            RegressionMetrics metrics = evaluator.Evaluate(model, testData);
+
+            Console.WriteLine($"Rms = {metrics.Rms}");
+            Console.WriteLine($"RSquared = {metrics.RSquared}");
+
 
         }
     }

@@ -118,6 +118,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemStocks.cs" />
     <Compile Include="ItemStock.cs" />
     <Compile Include="itemStockQtyPrediction.cs" />
     <Compile Include="Program.cs" />
