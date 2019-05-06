@@ -106,10 +106,10 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Data\taxi-fare-test.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Data\taxi-fare-train.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
